@@ -32,7 +32,7 @@
                 style="width: 150px;"
                 @click="goimg(item.src)"
               />
-            <!--   <div class="demo-image__preview" v-if="item.type == 'img'">
+              <!--   <div class="demo-image__preview" v-if="item.type == 'img'">
                 <el-image
                   style="width: 150px;"
                   :src="item.src"
@@ -102,8 +102,15 @@
         <el-button type="primary" @click="login">确 定</el-button>
       </span>
     </el-dialog>
-    <div id="imgbox" v-if="dialogVisible2" @click="dialogVisible2  =false;bigimg = ''">
-      <img :src="bigimg" alt="">
+    <div
+      id="imgbox"
+      v-if="dialogVisible2"
+      @click="
+        dialogVisible2 = false;
+        bigimg = '';
+      "
+    >
+      <img :src="bigimg" alt="" />
     </div>
   </div>
 </template>
@@ -131,7 +138,7 @@ export default {
       id: localStorage.getItem("userName"),
       svg: "",
       base64Url: "",
-      bigimg:''
+      bigimg: "",
     };
   },
   mounted() {
@@ -266,7 +273,7 @@ export default {
     },
     goimg(img) {
       this.dialogVisible2 = true;
-      this.bigimg = img
+      this.bigimg = img;
     },
     postimg(result) {
       console.log(result);
@@ -395,20 +402,19 @@ a {
   border-radius: 50%;
   overflow: hidden;
 }
-#imgbox{
-      width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 9;
-    top: 0;
-    left: 0;
-    background: rgba(144, 147, 153, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
+#imgbox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  background: rgba(144, 147, 153, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
- #imgbox img{
-      width: 100%;
-    }
+#imgbox img {
+  width: 100%;
+}
 </style>
