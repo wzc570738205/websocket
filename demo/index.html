@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="result">
+    <button id="sed" value="sadasdasd">发送</button>
+    <div id="info"></div>
+</body>
+
+</html>
+<script>
+    var ws = new WebSocket('ws://localhost:3000/echo');
+    ws.onmessage = function (event) {
+        console.log(event)
+        document.getElementById("info").innerHTML = event.data
+    }
+    ws.onopen = () => {
+        document.getElementById("sed").onclick = function () {
+            ws.send(document.getElementById("result").value);
+        }
+        ws.send('Hello!232323333');
+    }
+ 
+</script>
