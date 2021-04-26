@@ -123,7 +123,7 @@ import { service } from "./service.js";
 export default {
   name: "HelloWorld",
   data() {
-    this.ws = new WebSocket("ws://localhost:3000");
+    this.ws = new WebSocket("ws://81.70.203.187:3000");
     return {
       timer: null,
       userValue: "",

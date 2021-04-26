@@ -11,7 +11,8 @@ console.log('WebSocketServer started at port 3000...');
 let count = 0; //在线人数
 
 //let ws = new WebSocket('ws://192.168.1.45:3000');
-let ws = new WebSocket('ws://111.229.58.78:3000');
+//let ws = new WebSocket('ws://111.229.58.78:3000');
+let ws = new WebSocket('ws://81.70.203.187:3000');
 
 ws.on('open', function(e) {
   console.log(`[WebSocket] 打开连接()`);
